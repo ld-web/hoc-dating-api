@@ -32,3 +32,19 @@ Liste des dépendances :
 |[symfony/maker-bundle](https://packagist.org/packages/symfony/maker-bundle)|Série de commandes à utiliser dans la console pour créer des entités, des contrôleurs, un utilisateurs, etc...|`--dev`|
 |[symfony/profiler-pack](https://packagist.org/packages/symfony/profiler-pack)|En mode dev, nous permettra d'accéder au détail de chaque requête dans le navigateur web|`--dev`|
 |[symfony/web-server-bundle](https://packagist.org/packages/symfony/web-server-bundle)|Pour lancer un serveur en local avec la console|`--dev`|
+
+## Création de l'entité Utilisateur
+
+Nous allons utiliser la commande de la console `make:user` pour créer notre utilisateur. [Plus d'infos ici](https://symfony.com/blog/new-in-makerbundle-1-8-instant-user-login-form-commands#make-user).
+
+>La différence essentielle entre la commande `make:entity` et la commande `make:user` est l'orientation donnée par `make:user` sur le fait de créer explicitement un utilisateur.
+>
+>La commande nous pose des questions bien plus spécifiques pour créer un utilisateur, et l'entité créée implémente l'interface `UserInterface`, qui est le type utilisé par un fournisseur (ou encore un [provider](https://symfony.com/doc/current/security/user_provider.html)).
+
+### Structure de la table User
+
+Une fois le squelette de l'entité User créé avec la commande `make:user`, on peut compléter l'entité avec `make:entity`.
+
+La structure finale devrait ressembler à ça :
+
+![Structure de la table User](docs/img/user_struct.png "Structure de la table User")

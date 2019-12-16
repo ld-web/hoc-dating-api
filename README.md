@@ -33,7 +33,31 @@ Liste des dépendances :
 |[symfony/profiler-pack](https://packagist.org/packages/symfony/profiler-pack)|En mode dev, nous permettra d'accéder au détail de chaque requête dans le navigateur web|`--dev`|
 |[symfony/web-server-bundle](https://packagist.org/packages/symfony/web-server-bundle)|Pour lancer un serveur en local avec la console|`--dev`|
 
-## Création de l'entité Utilisateur
+## Configuration de la base de données
+
+### Si on utilise WAMP/LAMP/MAMP/XAMPP
+
+On peut ouvrir PhpMyAdmin, créer un nouvel utilisateur, créer une base de données portant son nom et lui donner tous les privilèges sur cette base.
+
+>**Ne pas donner de droits globaux à l'utilisateur fraîchement créé. On veut compartimenter l'utilisation du système de gestion de bases de données. Notre utilisateur ne doit donc pouvoir requêter que sur cette base de données et aucune autre**
+
+Une fois l'utilisateur et la base de données créés, on peut renseigner les coordonnées d'accès à la base de données pour notre ORM.
+
+>Fichier : .env.local
+
+```env
+DATABASE_URL=mysql://mon-user:mon-mot-de-passe@127.0.0.1:3306/ma-base-de-donnees?serverVersion=5.7
+```
+
+*Vous pouvez remplacer la version du serveur suivant la version de MySQL que vous utilisez.*
+
+>On renseigne ces coordonnées dans le fichier `.env.local` car :
+>
+>1. Il n'est pas versionné (on ne commitera ni ne pushera aucune information confidentielle sur notre dépôt distant)
+>
+>2. Il est propre à chaque machine et prend la priorité sur le fichier `.env`, qui lui est versionné. On pourra donc créer un fichier `.env.local` par environnement (dev, test, prod), avec des coordonnées de base de données différentes suivant le contexte
+
+## Création de l'entité User
 
 Nous allons utiliser la commande de la console `make:user` pour créer notre utilisateur. [Plus d'infos ici](https://symfony.com/blog/new-in-makerbundle-1-8-instant-user-login-form-commands#make-user).
 
@@ -50,3 +74,13 @@ Une fois le squelette de l'entité User créé avec la commande `make:user`, on 
 La structure finale devrait ressembler à ça :
 
 ![Structure de la table User](docs/img/user_struct.png "Structure de la table User")
+
+### Migration
+
+Quand on a terminé d'ajouter des champs dans notre entité, on peut créer une migration pour pousser les changements dans notre base de données.
+
+`php bin/console make:migration`
+
+Puis :
+
+`php bin/console doctrine:migrations:migrate`

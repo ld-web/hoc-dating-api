@@ -45,6 +45,8 @@ Nous allons utiliser la commande de la console `make:user` pour créer notre uti
 
 Une fois le squelette de l'entité User créé avec la commande `make:user`, on peut compléter l'entité avec `make:entity`.
 
+>Quand la commande `make:entity` vous demande le type de champ à créer, vous pouvez taper '?' pour avoir la liste des types disponibles
+
 La structure finale devrait ressembler à ça :
 
 ![Structure de la table User](docs/img/user_struct.png "Structure de la table User")

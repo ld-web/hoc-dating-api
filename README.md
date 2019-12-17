@@ -313,3 +313,11 @@ Par ailleurs, quand on se rend, dans le navigateur, sur **`/api`** :
 ![Documentation de l'API](docs/img/api_doc.png "Documentation de l'API")
 
 La documentation de l'API a été générée automatiquement !
+
+## Authentification / JWT
+
+Pour pouvoir s'authentifier et restreindre certaines URLs, on va installer et configurer un package qui génèrera un JWT.
+
+Il s'agit du package [LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle).
+
+Suivre les étapes d'installation et de configuration pour arriver à récupérer un token manuellement, via Postman, ou CURL en ligne de commande.

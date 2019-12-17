@@ -18,11 +18,11 @@ On peut créer notre API avec la commande `composer create-project symfony/skele
 
 #### Avant 5.0
 
-Une fois le projet créé, on peut lancer l'application en local avec `php bin/console server:run`.
+Une fois le projet créé, on peut lancer l'application en local avec `php bin/console server:run` ou avec l'exécutable Symfony.
 
 #### A partir de 5.0
 
-Il semble préférable d'utiliser [l'exécutable Symfony](https://symfony.com/download) lui-même (**Note : il est également possible de l'utiliser avant la version 5.0**) :
+Selon [cette note d'upgrade](https://github.com/symfony/symfony/blob/master/UPGRADE-5.0.md#webserverbundle), Il semble préférable d'utiliser [l'exécutable Symfony](https://symfony.com/download) lui-même (**Note : il est également possible de l'utiliser avant la version 5.0**) :
 
 ```bash
 # Pour afficher les commandes disponibles

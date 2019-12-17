@@ -18,7 +18,7 @@ On peut créer notre API avec la commande `composer create-project symfony/skele
 
 #### Avant 5.0
 
-Une fois le projet créé, on peut lancer l'application en local avec `php bin/console server:run` ou avec l'exécutable Symfony.
+Une fois le projet créé, on peut lancer l'application en local avec `php bin/console server:run` (donc la commande du WebServerBundle) ou bien avec l'exécutable Symfony.
 
 #### A partir de 5.0
 
@@ -55,7 +55,7 @@ Liste des dépendances :
 |[fzaninotto/faker](https://github.com/fzaninotto/Faker)|Pour générer des données aléatoires mais réalistes dans nos fixtures|-|
 |[symfony/maker-bundle](https://packagist.org/packages/symfony/maker-bundle)|Série de commandes à utiliser dans la console pour créer des entités, des contrôleurs, un utilisateurs, etc...|`--dev`|
 |[symfony/profiler-pack](https://packagist.org/packages/symfony/profiler-pack)|En mode dev, nous permettra d'accéder au détail de chaque requête dans le navigateur web|`--dev`|
-|[symfony/web-server-bundle](https://packagist.org/packages/symfony/web-server-bundle)|Pour lancer un serveur en local avec la console|`--dev`|
+|**[symfony/web-server-bundle](https://packagist.org/packages/symfony/web-server-bundle)**|**Pour lancer un serveur en local avec la console, attention ce bundle a été supprimé à partir de la version 5.0, ne l'installez que si vous utilisez une version de Symfony inférieure à 5.0**|**`--dev`**|
 
 ## Configuration de la base de données
 

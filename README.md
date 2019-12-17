@@ -244,3 +244,48 @@ Une fois le fichier enregistré, on peut charger les fixtures dans la base de do
 `php bin/console doctrine:fixtures:load`
 
 Patientez le temps de la création et de l'enregistrement de tous les objets, puis consultez les changements effectués depuis PhpMyAdmin.
+
+## API Platform
+
+Nous souhaiterons réaliser un CRUD sur nos utilisateurs dans notre application ReactJS.
+
+Avec API Platform, l'utilisation de l'annotation `@ApiResource` sur une entité permet d'exposer les endpoints nécessaires pour faire un CRUD.
+
+On va utiliser cette annotation :
+
+> Fichier : src/Entity/User.php
+
+```diff
+//...
+use Symfony\Component\Security\Core\User\UserInterface;
++ use ApiPlatform\Core\Annotation\ApiResource;
+
+/**
++ * @ApiResource
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ */
+class User implements UserInterface
+{
+  //...
+```
+
+Automatiquement, une série de routes est exposée :
+
+```bash
+  api_entrypoint              ANY      ANY      ANY    /api/{index}.{_format}
+  api_doc                     ANY      ANY      ANY    /api/docs.{_format}
+  api_jsonld_context          ANY      ANY      ANY    /api/contexts/{shortName}.{_format}
+  api_users_get_collection    GET      ANY      ANY    /api/users.{_format}
+  api_users_post_collection   POST     ANY      ANY    /api/users.{_format}
+  api_users_get_item          GET      ANY      ANY    /api/users/{id}.{_format}
+  api_users_delete_item       DELETE   ANY      ANY    /api/users/{id}.{_format}
+  api_users_put_item          PUT      ANY      ANY    /api/users/{id}.{_format}
+  api_users_patch_item        PATCH    ANY      ANY    /api/users/{id}.{_format}
+ --------------------------- -------- -------- ------ -------------------------------------
+```
+
+Par ailleurs, quand on se rend, dans le navigateur, sur **`/api`** :
+
+![Documentation de l'API](docs/img/api_doc.png "Documentation de l'API")
+
+La documentation de l'API a été générée automatiquement !

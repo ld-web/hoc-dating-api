@@ -1,4 +1,4 @@
-# API Symfony 4.4 / API Platform
+# API Symfony 5.0 / API Platform
 
 On veut réaliser une application de rencontres.
 

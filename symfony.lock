@@ -155,6 +155,9 @@
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/event-dispatcher": {
+        "version": "1.0.0"
+    },
     "psr/link": {
         "version": "1.0.0"
     },
@@ -197,9 +200,6 @@
             "./bin/console",
             "./config/bootstrap.php"
         ]
-    },
-    "symfony/debug": {
-        "version": "v4.4.1"
     },
     "symfony/dependency-injection": {
         "version": "v5.0.1"
@@ -292,9 +292,6 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
-    },
-    "symfony/process": {
-        "version": "v4.4.1"
     },
     "symfony/profiler-pack": {
         "version": "v1.0.4"
@@ -407,15 +404,6 @@
             "./config/packages/test/web_profiler.yaml",
             "./config/routes/dev/web_profiler.yaml"
         ]
-    },
-    "symfony/web-server-bundle": {
-        "version": "3.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "3.3",
-            "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
-        }
     },
     "symfony/yaml": {
         "version": "v5.0.1"

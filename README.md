@@ -14,6 +14,30 @@ On peut créer notre API avec la commande `composer create-project symfony/skele
 >
 >[Documentation](https://getcomposer.org/doc/03-cli.md#create-project)
 
+### Note sur la mise en route du serveur
+
+#### Avant 5.0
+
+Une fois le projet créé, on peut lancer l'application en local avec `php bin/console server:run`.
+
+#### A partir de 5.0
+
+Il semble préférable d'utiliser [l'exécutable Symfony](https://symfony.com/download) lui-même (**Note : il est également possible de l'utiliser avant la version 5.0**) :
+
+```bash
+# Pour afficher les commandes disponibles
+symfony --help
+
+# Pour afficher la version de l'exécutable installé
+symfony -v
+
+# Pour générer et installer un certificat local sur votre machine, et utiliser votre application locale avec HTTPS
+symfony server:ca:install
+
+# Pour lancer votre serveur
+symfony server:start
+```
+
 Ensuite, on va utiliser Composer & Flex pour installer nos dépendances.
 
 Vous pouvez trouver les packages de Symfony Flex sur [ce site](https://flex.symfony.com/).

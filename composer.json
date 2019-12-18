@@ -8,6 +8,7 @@
     "api-platform/api-pack": "^1.2",
     "doctrine/doctrine-fixtures-bundle": "^3.3",
     "fzaninotto/faker": "^1.9",
+    "lexik/jwt-authentication-bundle": "^2.6",
     "sensio/framework-extra-bundle": "^5.5",
     "symfony/console": "5.0.*",
     "symfony/dotenv": "5.0.*",

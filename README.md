@@ -321,3 +321,29 @@ Pour pouvoir s'authentifier et restreindre certaines URLs, on va installer et co
 Il s'agit du package [LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle).
 
 Suivre les étapes d'installation et de configuration pour arriver à récupérer un token manuellement, via Postman, ou CURL en ligne de commande.
+
+### Tests d'authentification
+
+Attention lors des tests (avec cURL ou Postman), vous devez envoyerune requête POST un contenu (body) en JSON de ce type :
+
+```json
+{
+  "username": "my-username",
+  "password": "my-password"
+}
+```
+
+L'URL à laquelle envoyer la requête va typiquement être `https://localhost:8000/api/login_check`
+
+![Aperçu Postman login](docs/img/postman_login.png "Aperçu Postman login")
+
+>**Pensez à :**
+>
+>- La méthode de la requête
+>- Bien mettre le port de l'application (par défaut 8000)
+>- Ne pas oublier de remplir le corps de la requête avec les identifiants
+>- Définir le type du contenu sur "JSON"
+
+Si tout se passe bien, vous devriez voir le token apparaître :
+
+![Token API Response](docs/img/token_response.png "Token API Response")
